@@ -1,0 +1,70 @@
+{% include '_header.twig' %}
+
+    <div id="site">
+        <div class="home-postex" id="postex">
+            <div class="clearfix animated fadeInUp" id="about-kerry">
+                <a href="/about/" title="About"><img src="{{ paths.theme }}images/kerry.jpg"></a>
+
+                <div class="content">
+                    <h4>Hello, I'm Kerry.</h4>
+                    <p class="larger">I'm a web developer at <a href="https://www.taskeasy.com">TaskEasy</a> in Salt Lake City.</p>
+                    <p>I love working with technology, rock climbing, and gaming. Join me while I build some things and ramble about others.</p>
+                </div>
+            </div>
+
+            <ul class="animated fadeInUp list-none" id="post-grid">
+
+              {% setcontent records = "entries/latest/5" allowpaging %}
+              {% for record in records %}
+              <li>
+                  <header class="entry-title">
+                      <a href="{{ record.link }}" title="{{ record.title }}">
+                        <div class="content">
+                            <h2>{{ record.title }}</h2>
+                            <p class="record-date">{{ record.datepublish|localdate("%A %B %e, %Y") }}</p>
+                            <p class="oneliner">{{ record.excerpt(450) }}</p>
+                        </div>
+                      </a>
+                  </header>
+              </li>
+              {% endfor %}
+
+            </ul>
+
+            <div class="view-more-posts">
+                <h2>
+                    <a href="entries" title="Post Archives">View more posts</a>
+                </h2>
+            </div>
+        </div>
+
+        <div class="photosection">
+            <div class="photosection_content">
+                <div class="imglist clearfix">
+                    <a href="/photos/" title="Photos">
+                        <div class="img-masonry last-icn morepics" style="background: url(https://fbcdn-sphotos-e-a.akamaihd.net/hphotos-ak-xaf1/t31.0-8/p417x417/10604105_10152701112038573_1315326046290187976_o.jpg) 0 0 no-repeat">
+                            <div class="photo-description">
+                                <p>Psicobloc 2014</p>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="/photos/" title="Photos">
+                        <div class="img-masonry last-icn morepics" style="background: url(https://fbcdn-sphotos-b-a.akamaihd.net/hphotos-ak-xfp1/v/t1.0-9/10371980_10205864347951079_650644742480572174_n.jpg?oh=488e52820aff05149d0c4a14bd13e633&oe=556943E9&__gda__=1432932793_d0dd42450f6f8890d34afbf59ecfd990) 0 0 no-repeat">
+                            <div class="photo-description">
+                                <p>Texas 2014</p>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="/photos/" title="Photos">
+                        <div class="img-masonry last-icn morepics" style="background: url(https://fbcdn-sphotos-e-a.akamaihd.net/hphotos-ak-xaf1/v/t1.0-9/1964826_10205363332306001_2659658447241193685_n.jpg?oh=da84a3f56255380072eba5bc2a085798&oe=5558389B&__gda__=1432017196_ef91061e69a9c70732faa584c965808c) 0 0 no-repeat">
+                            <div class="photo-description">
+                                <p>Thanksgiving 2014</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+
+{% include '_footer.twig' %}

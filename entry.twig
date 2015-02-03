@@ -1,0 +1,19 @@
+{% include '_header.twig' %}
+
+    <div id="site">
+        <div class="home-postex animated fadeInUp" id="postex">
+
+            <h2>{{ record.title }}</h2>
+            <p class="record-date">{{ record.datepublish|localdate("%A %B %e, %Y") }}</p>
+
+            {{ record.body }}
+
+            {% if Disqus is defined %}
+                <h4>Leave a comment</h4>
+                {{ Disqus.disqus() }}
+                <hr>
+            {% endif %}
+
+    </div>
+
+{% include '_footer.twig' %}

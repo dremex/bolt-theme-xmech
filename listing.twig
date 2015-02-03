@@ -1,0 +1,28 @@
+{% include '_header.twig' %}
+
+    <div id="site">
+        <div class="home-postex" id="postex">
+
+        <ul class="animated fadeInUp list-none" id="post-grid">
+
+            {% for record in records %}
+                <li>
+                  <header class="entry-title">
+                      <a href="{{ record.link }}" title="{{ record.title }}">
+                        <div class="content">
+                            <h2>{{ record.title }}</h2>
+                            <p class="record-date">{{ record.datepublish|localdate("%A %B %e, %Y") }}</p>
+                            <p class="oneliner">{{ record.excerpt(450) }}</p>
+                        </div>
+                      </a>
+                  </header>
+              </li>
+            {% endfor %}
+
+        </ul>
+
+        {{ pager() }}
+
+        </div>
+
+{% include '_footer.twig' %}
