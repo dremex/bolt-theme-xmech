@@ -628,7 +628,7 @@ a:hover {
 }
 
 a:visited {
-  color: #6a4c96;
+  color: #4c6296;
 }
 
 a:visited:hover {
@@ -965,6 +965,7 @@ ul {
 }
 
 .article-date {
+    color: #999;
     margin-top: -15px!important;
 }
 
