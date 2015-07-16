@@ -975,15 +975,13 @@ ul {
     margin-bottom: 3em;
 }
 
-@media only screen and (max-width: 40em) {
-    #post {
-        width:90%
-    }
+#post .center {
+    text-align: center;
+}
 
-    #post .center img {
-        max-width:100%;
-        height:auto
-    }
+#post .center img {
+    max-width:100%;
+    height:auto;
 }
 
 .pagerContainer {
