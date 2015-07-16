@@ -41,30 +41,18 @@
         <div class="photosection">
             <div class="photosection_content">
                 <div class="imglist clearfix">
-                    <a href="entry/ten-sleep-2015" title="Photos">
-                        <div class="img-masonry last-icn morepics" style="background: url(https://lh3.googleusercontent.com/ABzWkjsY9o5fmzn1fPhcgadRQyDnCzjqU1xd3jQIvdk=w816-h1222-no) 0 0 no-repeat;background-position: 0px -160px;">
+                    {% setcontent records = "entries" where { categories: 'Photo Section Item', image: '%.jpg%' } limit 3 %}
+                    {% for record in records %}
+                    <a href="{{ record.link }}" title="Photos">
+                        <div class="img-masonry last-icn morepics" style="background: url({{ record.image|image }}) 0 0 no-repeat;background-position: {{ record.horizontal_image_offset }}px {{ record.vertical_image_offset }}px;">
                             <div class="photo-description">
-                                <p>Ten Sleep 2015</p>
+                                <p>{{ record.title }}</p>
                             </div>
                         </div>
                     </a>
-                    <a href="/photos/" title="Photos">
-                        <div class="img-masonry last-icn morepics" style="background: url(https://fbcdn-sphotos-e-a.akamaihd.net/hphotos-ak-xaf1/t31.0-8/p417x417/10604105_10152701112038573_1315326046290187976_o.jpg) 0 0 no-repeat">
-                            <div class="photo-description">
-                                <p>Psicobloc 2014</p>
-                            </div>
-                        </div>
-                    </a>
-                    <a href="/photos/" title="Photos">
-                        <div class="img-masonry last-icn morepics" style="background: url(https://fbcdn-sphotos-e-a.akamaihd.net/hphotos-ak-xaf1/v/t1.0-9/1964826_10205363332306001_2659658447241193685_n.jpg?oh=da84a3f56255380072eba5bc2a085798&oe=5558389B&__gda__=1432017196_ef91061e69a9c70732faa584c965808c) 0 0 no-repeat">
-                            <div class="photo-description">
-                                <p>Thanksgiving 2014</p>
-                            </div>
-                        </div>
-                    </a>
+                    {% endfor %}
                 </div>
             </div>
         </div>
-
 
 {% include '_footer.twig' %}
